@@ -4,7 +4,7 @@ export const profileData = {
   location: 'Mumbai, India',
   email: 'krishnayadavabc123@gmail.com',
   phone: '7992153750',
-  linkedin: 'https://linkedin.com/in/krishnayadav0218',
+  linkedin: 'https://www.linkedin.com/in/krishnayadav0218/',
   github: 'https://github.com/abhiyadav2',
   instagram: 'https://www.instagram.com/yadvanshi_anubhav0218/?hl=en',
   summary:
