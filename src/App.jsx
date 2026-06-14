@@ -14,7 +14,6 @@ import {
   MapPin,
   Phone,
   Send,
-  Sparkles,
   Target,
 } from 'lucide-react';
 import './App.css';
@@ -47,7 +46,7 @@ function App() {
 
       if (!response.ok) throw new Error('Could not send message.');
       setForm({ name: '', email: '', message: '' });
-      setStatus('Message sent. Krishna can follow up from the contact details provided.');
+      setStatus('Message sent directly to Krishna by email.');
     } catch {
       setStatus('Message could not be saved right now. Please use email or LinkedIn.');
     }
@@ -69,9 +68,6 @@ function App() {
 
       <section className="hero-section" id="home">
         <div className="hero-copy">
-          <p className="eyebrow">
-            <Sparkles size={16} /> Big 4-ready analytics portfolio
-          </p>
           <h1>{profile.headline}</h1>
           <p className="intro">{profile.summary}</p>
           <div className="hero-actions">

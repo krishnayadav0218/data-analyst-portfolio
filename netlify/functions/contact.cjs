@@ -18,13 +18,31 @@ exports.handler = async (event) => {
       };
     }
 
+    const mailResponse = await fetch('https://formsubmit.co/ajax/krishnayadavabc123@gmail.com', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        message,
+        _subject: `Portfolio message from ${name}`,
+        _template: 'table',
+      }),
+    });
+
+    if (!mailResponse.ok) {
+      throw new Error('Email delivery failed.');
+    }
+
     return {
       statusCode: 201,
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         ok: true,
-        message:
-          'Message received. On Netlify, connect this function to email, Airtable, or a database to store submissions.',
+        message: 'Message sent to Krishna by email.',
       }),
     };
   } catch {
