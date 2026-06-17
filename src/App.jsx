@@ -97,7 +97,10 @@ function App() {
               <span>Client Growth View</span>
               <strong>Q4 Analytics</strong>
             </div>
-            <BarChart3 size={26} />
+            <div className="visual-status" aria-hidden="true">
+              <span></span>
+              <BarChart3 size={26} />
+            </div>
           </div>
           <div className="kpi-grid">
             {profile.metrics.map((metric) => (
@@ -108,12 +111,12 @@ function App() {
             ))}
           </div>
           <div className="chart-row">
-            <span style={{ height: '42%' }}></span>
-            <span style={{ height: '68%' }}></span>
-            <span style={{ height: '54%' }}></span>
-            <span style={{ height: '82%' }}></span>
-            <span style={{ height: '73%' }}></span>
-            <span style={{ height: '92%' }}></span>
+            <span style={{ '--bar-height': '42%' }}></span>
+            <span style={{ '--bar-height': '68%' }}></span>
+            <span style={{ '--bar-height': '54%' }}></span>
+            <span style={{ '--bar-height': '82%' }}></span>
+            <span style={{ '--bar-height': '73%' }}></span>
+            <span style={{ '--bar-height': '92%' }}></span>
           </div>
           <div className="insight-panel">
             <Target size={22} />
