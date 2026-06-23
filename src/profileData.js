@@ -5,7 +5,7 @@ export const profileData = {
   email: 'krishnayadavabc123@gmail.com',
   phone: '7992153750',
   linkedin: 'https://www.linkedin.com/in/krishnayadav0218/',
-  github: 'https://github.com/abhiyadav2',
+  github: 'https://github.com/krishnayadav0218',
   instagram: 'https://www.instagram.com/yadvanshi_anubhav0218/?hl=en',
   summary:
     'Aspiring data scientist with hands-on experience in dashboard creation, data visualization, machine learning model development, and business-ready reporting using Python, SQL, Power BI, Tableau, and Excel.',
