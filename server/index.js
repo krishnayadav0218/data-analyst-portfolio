@@ -21,7 +21,7 @@ app.get('/api/profile', (_req, res) => {
 });
 
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message } = req.body ?? {};
+  const { name, email, message, source = 'Local contact form', service = 'General inquiry' } = req.body ?? {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
@@ -32,6 +32,8 @@ app.post('/api/contact', async (req, res) => {
     name: String(name).trim(),
     email: String(email).trim(),
     message: String(message).trim(),
+    source: String(source).trim(),
+    service: String(service).trim(),
     receivedAt: new Date().toISOString(),
   };
 

@@ -57,6 +57,35 @@ function App() {
     'Hi Krishna, I visited your portfolio and want to discuss an analytics project.',
   )}`;
 
+  const sendPortfolioMessage = async (payload) => {
+    const apiResponse = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).catch(() => null);
+
+    if (apiResponse?.ok) return true;
+
+    const emailResponse = await fetch('https://formsubmit.co/ajax/krishnayadavabc123@gmail.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        name: payload.name,
+        email: payload.email,
+        source: payload.source ?? 'Portfolio form',
+        service: payload.service ?? 'General inquiry',
+        message: payload.message,
+        _subject: `Portfolio ${payload.source ?? 'message'} from ${payload.name}`,
+        _template: 'table',
+      }),
+    }).catch(() => null);
+
+    return Boolean(emailResponse?.ok);
+  };
+
   const askChatbot = (topic) => {
     const answers = {
       faqs: 'FAQs: Krishna helps with dashboards, SQL/Python analysis, KPI reporting, data cleaning, and ML prototypes.',
@@ -80,17 +109,13 @@ function App() {
     setStatus('Sending...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      });
+      const sent = await sendPortfolioMessage({ ...form, source: 'Contact form' });
 
-      if (!response.ok) throw new Error('Could not send message.');
+      if (!sent) throw new Error('Could not send message.');
       setForm({ name: '', email: '', message: '' });
       setStatus('Message sent directly to Krishna by email.');
     } catch {
-      setStatus('Message could not be saved right now. Please use email or LinkedIn.');
+      setStatus('Email service needs activation. Please use WhatsApp or direct email for now.');
     }
   };
 
@@ -99,17 +124,13 @@ function App() {
     setLeadStatus('Sending lead...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...leadForm,
-          message: `Service: ${leadForm.service}. ${leadForm.message}`,
-          source: 'Lead generation form',
-        }),
+      const sent = await sendPortfolioMessage({
+        ...leadForm,
+        message: `Service: ${leadForm.service}. ${leadForm.message}`,
+        source: 'Lead generation form',
       });
 
-      if (!response.ok) throw new Error('Could not send lead.');
+      if (!sent) throw new Error('Could not send lead.');
       setLeadForm({ name: '', email: '', service: 'Dashboard Development', message: '' });
       setLeadStatus('Lead captured and sent to Krishna by email.');
     } catch {
@@ -122,18 +143,15 @@ function App() {
     setBookingStatus('Sending booking request...');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: bookingForm.name,
-          email: bookingForm.email,
-          message: `Appointment request for ${bookingForm.date}. ${bookingForm.message}`,
-          source: 'Appointment booking form',
-        }),
+      const sent = await sendPortfolioMessage({
+        name: bookingForm.name,
+        email: bookingForm.email,
+        message: `Appointment request for ${bookingForm.date}. ${bookingForm.message}`,
+        source: 'Appointment booking form',
+        service: 'Appointment booking',
       });
 
-      if (!response.ok) throw new Error('Could not send booking.');
+      if (!sent) throw new Error('Could not send booking.');
       setBookingForm({ name: '', email: '', date: '', message: '' });
       setBookingStatus('Appointment request sent. Krishna will confirm soon.');
     } catch {
@@ -173,7 +191,7 @@ function App() {
             <a className="secondary-action" href="#projects">
               View case studies <ArrowUpRight size={18} />
             </a>
-            <a className="secondary-action" href="/krishna-yadav-resume.html" download>
+            <a className="secondary-action" href="/krishna-yadav-resume.pdf" download>
               <Download size={18} /> Download resume
             </a>
             <a className="secondary-action" href={whatsappUrl} target="_blank" rel="noreferrer">
@@ -410,15 +428,6 @@ function App() {
               <strong>{stat.value}</strong>
             </article>
           ))}
-          <div className="admin-activity">
-            <h3>Recent automation</h3>
-            <ul>
-              <li>Contact messages forward to email.</li>
-              <li>Theme mode updates instantly.</li>
-              <li>Resume is available for direct download.</li>
-              <li>Lead capture and appointment requests are CRM-ready.</li>
-            </ul>
-          </div>
           <div className="admin-activity crm-activity">
             <h3>CRM pipeline</h3>
             <div className="crm-grid">
