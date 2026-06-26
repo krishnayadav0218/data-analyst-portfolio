@@ -101,6 +101,55 @@ const profile = {
     'NoSQL Database Essentials - IBM DB0151EN',
     'Power BI for Beginners - Udemy',
   ],
+  blogPosts: [
+    {
+      title: 'How I approach a sales dashboard project',
+      category: 'Power BI',
+      readTime: '4 min read',
+      summary:
+        'A practical breakdown of how I clean data, choose KPIs, design visuals, and turn dashboard pages into business decisions.',
+    },
+    {
+      title: 'Python libraries I use for analytics',
+      category: 'Python',
+      readTime: '3 min read',
+      summary:
+        'Notes on Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn for analysis, visualization, and machine learning prototypes.',
+    },
+    {
+      title: 'What makes a good analyst portfolio',
+      category: 'Career',
+      readTime: '5 min read',
+      summary:
+        'A portfolio should show business context, tools used, measurable outcomes, and clean storytelling instead of only screenshots.',
+    },
+  ],
+  testimonials: [
+    {
+      name: 'Analytics Mentor',
+      role: 'Project Reviewer',
+      quote:
+        'Krishna shows strong curiosity, clear dashboard thinking, and a practical approach to turning data into insights.',
+    },
+    {
+      name: 'Team Collaborator',
+      role: 'Web Development Project',
+      quote:
+        'He communicates well, learns quickly, and contributes with ownership across analytics and web technology tasks.',
+    },
+    {
+      name: 'Academic Guide',
+      role: 'Data Science Learning',
+      quote:
+        'His project work reflects a solid foundation in Python, visualization, and applied machine learning concepts.',
+    },
+  ],
+  adminStats: [
+    { label: 'Portfolio sections', value: '9' },
+    { label: 'Projects tracked', value: '4' },
+    { label: 'Skills grouped', value: '6' },
+    { label: 'Contact status', value: 'Email ready' },
+  ],
 };
 
 exports.handler = async () => ({

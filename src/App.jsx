@@ -6,14 +6,18 @@ import {
   BriefcaseBusiness,
   Camera,
   CheckCircle2,
+  Download,
   Database,
   ExternalLink,
   GitBranch,
   GraduationCap,
+  LayoutDashboard,
   Mail,
   MapPin,
+  Moon,
   Phone,
   Send,
+  Sun,
   Target,
 } from 'lucide-react';
 import './App.css';
@@ -21,17 +25,19 @@ import { profileData } from './profileData';
 
 function App() {
   const [profile, setProfile] = useState(profileData);
+  const [theme, setTheme] = useState('light');
   const [status, setStatus] = useState('');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
 
   useEffect(() => {
     fetch('/api/profile')
       .then((response) => response.json())
-      .then(setProfile)
+      .then((data) => setProfile({ ...profileData, ...data }))
       .catch(() => setProfile(profileData));
   }, []);
 
   const skillGroups = useMemo(() => Object.entries(profile.skills ?? {}), [profile.skills]);
+  const toggleTheme = () => setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
 
   const submitMessage = async (event) => {
     event.preventDefault();
@@ -53,7 +59,7 @@ function App() {
   };
 
   return (
-    <main>
+    <main data-theme={theme}>
       <nav className="topbar" aria-label="Portfolio navigation">
         <a className="brand" href="#home" aria-label="Krishna Yadav portfolio home">
           <span>KY</span>
@@ -61,8 +67,13 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#projects">Projects</a>
+          <a href="#blog">Blog</a>
           <a href="#skills">Skills</a>
+          <a href="#admin">Admin</a>
           <a href="#contact">Contact</a>
+          <button className="theme-toggle" type="button" onClick={toggleTheme} aria-label="Toggle dark and light theme">
+            {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
+          </button>
         </div>
       </nav>
 
@@ -76,6 +87,9 @@ function App() {
             </a>
             <a className="secondary-action" href="#projects">
               View case studies <ArrowUpRight size={18} />
+            </a>
+            <a className="secondary-action" href="/krishna-yadav-resume.html" download>
+              <Download size={18} /> Download resume
             </a>
           </div>
           <div className="contact-strip" aria-label="Contact information">
@@ -176,6 +190,30 @@ function App() {
         </div>
       </section>
 
+      <section className="section" id="blog">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <Database size={16} /> Blog
+          </p>
+          <h2>Short analytics notes and learning stories</h2>
+        </div>
+        <div className="blog-grid">
+          {profile.blogPosts.map((post) => (
+            <article className="blog-card" key={post.title}>
+              <div className="project-meta">
+                <span>{post.category}</span>
+                <span>{post.readTime}</span>
+              </div>
+              <h3>{post.title}</h3>
+              <p>{post.summary}</p>
+              <a href="#contact">
+                Discuss this topic <ArrowUpRight size={17} />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="section split" id="skills">
         <div>
           <div className="section-heading left">
@@ -217,6 +255,53 @@ function App() {
             ))}
           </ul>
         </aside>
+      </section>
+
+      <section className="section testimonials-section">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <Award size={16} /> Testimonials
+          </p>
+          <h2>What people can expect while working with Krishna</h2>
+        </div>
+        <div className="testimonial-grid">
+          {profile.testimonials.map((testimonial) => (
+            <article className="testimonial-card" key={testimonial.name}>
+              <p>“{testimonial.quote}”</p>
+              <strong>{testimonial.name}</strong>
+              <span>{testimonial.role}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section admin-section" id="admin">
+        <div className="admin-copy">
+          <p className="eyebrow">
+            <LayoutDashboard size={16} /> Admin panel
+          </p>
+          <h2>Portfolio content control center</h2>
+          <p>
+            A clean admin-style overview for tracking sections, projects, skills, contact readiness, and publishing
+            status.
+          </p>
+        </div>
+        <div className="admin-panel">
+          {profile.adminStats.map((stat) => (
+            <article className="admin-stat" key={stat.label}>
+              <span>{stat.label}</span>
+              <strong>{stat.value}</strong>
+            </article>
+          ))}
+          <div className="admin-activity">
+            <h3>Recent automation</h3>
+            <ul>
+              <li>Contact messages forward to email.</li>
+              <li>Theme mode updates instantly.</li>
+              <li>Resume is available for direct download.</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section className="section contact-section" id="contact">
