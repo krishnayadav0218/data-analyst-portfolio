@@ -145,9 +145,43 @@ export const profileData = {
     },
   ],
   adminStats: [
-    { label: 'Portfolio sections', value: '9' },
+    { label: 'Portfolio sections', value: '14' },
     { label: 'Projects tracked', value: '4' },
     { label: 'Skills grouped', value: '6' },
     { label: 'Contact status', value: 'Email ready' },
+  ],
+  services: [
+    {
+      title: 'Dashboard Development',
+      detail: 'Power BI, Excel, and Tableau dashboards for sales, operations, and KPI tracking.',
+    },
+    {
+      title: 'Data Analysis Support',
+      detail: 'Python, SQL, and spreadsheet analysis for reports, trends, insights, and decision support.',
+    },
+    {
+      title: 'Machine Learning Prototype',
+      detail: 'Entry-level ML models, experiments, visualizations, and model performance summaries.',
+    },
+  ],
+  faqs: [
+    {
+      question: 'What services can Krishna help with?',
+      answer: 'Dashboards, SQL/Python analysis, KPI reporting, data cleaning, and beginner ML prototypes.',
+    },
+    {
+      question: 'How can recruiters contact Krishna?',
+      answer: 'Use the contact form, WhatsApp CTA, email button, LinkedIn, or appointment request form.',
+    },
+    {
+      question: 'Is the contact form connected to email?',
+      answer: 'Yes, the Netlify function forwards contact and lead messages to Krishna by email.',
+    },
+  ],
+  crmPipeline: [
+    { stage: 'New lead', count: 'Auto' },
+    { stage: 'Email notification', count: 'On' },
+    { stage: 'Follow-up channel', count: 'WhatsApp' },
+    { stage: 'Booking status', count: 'Ready' },
   ],
 };

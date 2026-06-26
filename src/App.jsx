@@ -3,8 +3,10 @@ import {
   ArrowUpRight,
   Award,
   BarChart3,
+  Bot,
   BriefcaseBusiness,
   Camera,
+  CalendarCheck,
   CheckCircle2,
   Download,
   Database,
@@ -13,12 +15,14 @@ import {
   GraduationCap,
   LayoutDashboard,
   Mail,
+  MessageCircle,
   MapPin,
   Moon,
   Phone,
   Send,
   Sun,
   Target,
+  Users,
 } from 'lucide-react';
 import './App.css';
 import { profileData } from './profileData';
@@ -28,6 +32,17 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [status, setStatus] = useState('');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [leadStatus, setLeadStatus] = useState('');
+  const [bookingStatus, setBookingStatus] = useState('');
+  const [leadForm, setLeadForm] = useState({ name: '', email: '', service: 'Dashboard Development', message: '' });
+  const [bookingForm, setBookingForm] = useState({ name: '', email: '', date: '', message: '' });
+  const [chatOpen, setChatOpen] = useState(false);
+  const [chatMessages, setChatMessages] = useState([
+    {
+      from: 'assistant',
+      text: 'Hi, I can help with FAQs, service details, lead capture, WhatsApp, and appointment booking.',
+    },
+  ]);
 
   useEffect(() => {
     fetch('/api/profile')
@@ -38,6 +53,27 @@ function App() {
 
   const skillGroups = useMemo(() => Object.entries(profile.skills ?? {}), [profile.skills]);
   const toggleTheme = () => setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
+  const whatsappUrl = `https://wa.me/91${profile.phone}?text=${encodeURIComponent(
+    'Hi Krishna, I visited your portfolio and want to discuss an analytics project.',
+  )}`;
+
+  const askChatbot = (topic) => {
+    const answers = {
+      faqs: 'FAQs: Krishna helps with dashboards, SQL/Python analysis, KPI reporting, data cleaning, and ML prototypes.',
+      services:
+        'Services: dashboard development, data analysis support, business reporting, and machine learning prototypes.',
+      lead: 'Lead capture: use the lead form below or send a WhatsApp message for faster follow-up.',
+      booking: 'Appointment booking: fill the booking request form and Krishna will confirm by email or WhatsApp.',
+      crm: 'CRM integration: portfolio leads are structured for CRM follow-up with source, service, contact, and message fields.',
+    };
+
+    setChatOpen(true);
+    setChatMessages((messages) => [
+      ...messages,
+      { from: 'user', text: topic },
+      { from: 'assistant', text: answers[topic] ?? answers.services },
+    ]);
+  };
 
   const submitMessage = async (event) => {
     event.preventDefault();
@@ -58,6 +94,53 @@ function App() {
     }
   };
 
+  const submitLead = async (event) => {
+    event.preventDefault();
+    setLeadStatus('Sending lead...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...leadForm,
+          message: `Service: ${leadForm.service}. ${leadForm.message}`,
+          source: 'Lead generation form',
+        }),
+      });
+
+      if (!response.ok) throw new Error('Could not send lead.');
+      setLeadForm({ name: '', email: '', service: 'Dashboard Development', message: '' });
+      setLeadStatus('Lead captured and sent to Krishna by email.');
+    } catch {
+      setLeadStatus('Lead could not be sent right now. Please use WhatsApp.');
+    }
+  };
+
+  const submitBooking = async (event) => {
+    event.preventDefault();
+    setBookingStatus('Sending booking request...');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: bookingForm.name,
+          email: bookingForm.email,
+          message: `Appointment request for ${bookingForm.date}. ${bookingForm.message}`,
+          source: 'Appointment booking form',
+        }),
+      });
+
+      if (!response.ok) throw new Error('Could not send booking.');
+      setBookingForm({ name: '', email: '', date: '', message: '' });
+      setBookingStatus('Appointment request sent. Krishna will confirm soon.');
+    } catch {
+      setBookingStatus('Booking request could not be sent. Please use WhatsApp.');
+    }
+  };
+
   return (
     <main data-theme={theme}>
       <nav className="topbar" aria-label="Portfolio navigation">
@@ -68,6 +151,8 @@ function App() {
         <div className="nav-links">
           <a href="#projects">Projects</a>
           <a href="#blog">Blog</a>
+          <a href="#services">Services</a>
+          <a href="#leads">Leads</a>
           <a href="#skills">Skills</a>
           <a href="#admin">Admin</a>
           <a href="#contact">Contact</a>
@@ -90,6 +175,9 @@ function App() {
             </a>
             <a className="secondary-action" href="/krishna-yadav-resume.html" download>
               <Download size={18} /> Download resume
+            </a>
+            <a className="secondary-action" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} /> WhatsApp
             </a>
           </div>
           <div className="contact-strip" aria-label="Contact information">
@@ -135,6 +223,35 @@ function App() {
           <div className="insight-panel">
             <Target size={22} />
             <p>Built for consulting teams: concise KPI logic, clear assumptions, and insight-first storytelling.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section services-section" id="services">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <Users size={16} /> Professional services
+          </p>
+          <h2>Service details, FAQs, and chatbot-ready answers</h2>
+        </div>
+        <div className="services-layout">
+          <div className="service-grid">
+            {profile.services.map((service) => (
+              <article className="service-card" key={service.title}>
+                <CheckCircle2 size={22} />
+                <h3>{service.title}</h3>
+                <p>{service.detail}</p>
+              </article>
+            ))}
+          </div>
+          <div className="faq-panel">
+            <h3>FAQs</h3>
+            {profile.faqs.map((faq) => (
+              <details key={faq.question}>
+                <summary>{faq.question}</summary>
+                <p>{faq.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -267,7 +384,7 @@ function App() {
         <div className="testimonial-grid">
           {profile.testimonials.map((testimonial) => (
             <article className="testimonial-card" key={testimonial.name}>
-              <p>“{testimonial.quote}”</p>
+              <p>"{testimonial.quote}"</p>
               <strong>{testimonial.name}</strong>
               <span>{testimonial.role}</span>
             </article>
@@ -299,8 +416,129 @@ function App() {
               <li>Contact messages forward to email.</li>
               <li>Theme mode updates instantly.</li>
               <li>Resume is available for direct download.</li>
+              <li>Lead capture and appointment requests are CRM-ready.</li>
             </ul>
           </div>
+          <div className="admin-activity crm-activity">
+            <h3>CRM pipeline</h3>
+            <div className="crm-grid">
+              {profile.crmPipeline.map((item) => (
+                <span key={item.stage}>
+                  <strong>{item.count}</strong>
+                  {item.stage}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section lead-booking-section" id="leads">
+        <div className="section-heading">
+          <p className="eyebrow">
+            <CalendarCheck size={16} /> Lead generation
+          </p>
+          <h2>Lead capture, appointment booking, WhatsApp CTA, and email notifications</h2>
+        </div>
+        <div className="lead-booking-grid">
+          <form className="contact-form" onSubmit={submitLead}>
+            <h3>Lead capture form</h3>
+            <label>
+              Name
+              <input
+                value={leadForm.name}
+                onChange={(event) => setLeadForm({ ...leadForm, name: event.target.value })}
+                placeholder="Your name"
+                required
+              />
+            </label>
+            <label>
+              Email
+              <input
+                type="email"
+                value={leadForm.email}
+                onChange={(event) => setLeadForm({ ...leadForm, email: event.target.value })}
+                placeholder="you@company.com"
+                required
+              />
+            </label>
+            <label>
+              Service
+              <select
+                value={leadForm.service}
+                onChange={(event) => setLeadForm({ ...leadForm, service: event.target.value })}
+              >
+                {profile.services.map((service) => (
+                  <option key={service.title}>{service.title}</option>
+                ))}
+              </select>
+            </label>
+            <label>
+              Requirement
+              <textarea
+                value={leadForm.message}
+                onChange={(event) => setLeadForm({ ...leadForm, message: event.target.value })}
+                placeholder="Tell Krishna what you need"
+                required
+              />
+            </label>
+            <button type="submit">
+              <Send size={18} /> Capture lead
+            </button>
+            <p className="form-status" aria-live="polite">
+              {leadStatus}
+            </p>
+          </form>
+
+          <form className="contact-form" onSubmit={submitBooking}>
+            <h3>Appointment booking</h3>
+            <label>
+              Name
+              <input
+                value={bookingForm.name}
+                onChange={(event) => setBookingForm({ ...bookingForm, name: event.target.value })}
+                placeholder="Your name"
+                required
+              />
+            </label>
+            <label>
+              Email
+              <input
+                type="email"
+                value={bookingForm.email}
+                onChange={(event) => setBookingForm({ ...bookingForm, email: event.target.value })}
+                placeholder="you@company.com"
+                required
+              />
+            </label>
+            <label>
+              Preferred date
+              <input
+                type="date"
+                value={bookingForm.date}
+                onChange={(event) => setBookingForm({ ...bookingForm, date: event.target.value })}
+                required
+              />
+            </label>
+            <label>
+              Notes
+              <textarea
+                value={bookingForm.message}
+                onChange={(event) => setBookingForm({ ...bookingForm, message: event.target.value })}
+                placeholder="Preferred time, project details, or role details"
+                required
+              />
+            </label>
+            <button type="submit">
+              <CalendarCheck size={18} /> Request appointment
+            </button>
+            <a className="whatsapp-cta" href={whatsappUrl} target="_blank" rel="noreferrer">
+              <MessageCircle size={18} /> Continue on WhatsApp
+            </a>
+            <p className="form-status" aria-live="polite">
+              {bookingStatus}
+            </p>
+          </form>
         </div>
       </section>
 
@@ -363,6 +601,49 @@ function App() {
           </p>
         </form>
       </section>
+
+      <aside className={`chatbot ${chatOpen ? 'open' : ''}`} aria-label="AI chat assistant">
+        {chatOpen && (
+          <div className="chat-window">
+            <div className="chat-header">
+              <div>
+                <strong>AI Chat Assistant</strong>
+                <span>FAQs, services, leads, booking</span>
+              </div>
+              <button type="button" onClick={() => setChatOpen(false)} aria-label="Close chat">
+                x
+              </button>
+            </div>
+            <div className="chat-messages">
+              {chatMessages.map((message, index) => (
+                <p className={message.from} key={`${message.from}-${index}`}>
+                  {message.text}
+                </p>
+              ))}
+            </div>
+            <div className="chat-quick-actions">
+              <button type="button" onClick={() => askChatbot('faqs')}>
+                FAQs
+              </button>
+              <button type="button" onClick={() => askChatbot('services')}>
+                Services
+              </button>
+              <button type="button" onClick={() => askChatbot('lead')}>
+                Lead capture
+              </button>
+              <button type="button" onClick={() => askChatbot('booking')}>
+                Booking
+              </button>
+              <button type="button" onClick={() => askChatbot('crm')}>
+                CRM
+              </button>
+            </div>
+          </div>
+        )}
+        <button className="chat-toggle" type="button" onClick={() => setChatOpen((open) => !open)}>
+          <Bot size={22} /> AI Assistant
+        </button>
+      </aside>
     </main>
   );
 }

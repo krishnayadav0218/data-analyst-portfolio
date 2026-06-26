@@ -439,7 +439,9 @@ h3 {
 .project-grid,
 .skills-grid,
 .blog-grid,
-.testimonial-grid {
+.testimonial-grid,
+.service-grid,
+.lead-booking-grid {
   display: grid;
   gap: 16px;
 }
@@ -455,6 +457,8 @@ h3 {
 .contact-form,
 .blog-card,
 .testimonial-card,
+.service-card,
+.faq-panel,
 .admin-panel {
   border: 1px solid var(--border-soft);
   border-radius: 8px;
@@ -488,6 +492,48 @@ h3 {
 .blog-grid,
 .testimonial-grid {
   grid-template-columns: repeat(3, 1fr);
+}
+
+.services-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.service-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card,
+.faq-panel {
+  padding: 22px;
+  box-shadow: 0 18px 45px rgba(26, 54, 62, 0.08);
+}
+
+.service-card svg {
+  color: var(--teal);
+}
+
+.service-card p,
+.faq-panel p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.faq-panel details {
+  border-top: 1px solid var(--border-soft);
+  padding: 14px 0;
+}
+
+.faq-panel details:first-of-type {
+  border-top: 0;
+}
+
+.faq-panel summary {
+  color: var(--text-strong);
+  cursor: pointer;
+  font-weight: 800;
 }
 
 .project-card,
@@ -670,6 +716,34 @@ main[data-theme='dark'] .admin-activity {
   padding-left: 18px;
 }
 
+.crm-activity {
+  background: color-mix(in srgb, var(--surface-strong) 70%, #edf5f4);
+  color: var(--text);
+}
+
+.crm-grid,
+.lead-booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.crm-grid span {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 12px;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.crm-grid strong {
+  color: var(--text-strong);
+  font-size: 1.2rem;
+}
+
 .credential-panel ul {
   padding-left: 18px;
   margin-bottom: 0;
@@ -708,6 +782,7 @@ main[data-theme='dark'] .admin-activity {
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
   width: 100%;
   box-sizing: border-box;
@@ -724,10 +799,129 @@ main[data-theme='dark'] .admin-activity {
 }
 
 .contact-form input:focus,
+.contact-form select:focus,
 .contact-form textarea:focus {
   border-color: #1d6b66;
   background: #fbfdfc;
   box-shadow: 0 0 0 4px rgba(29, 107, 102, 0.1);
+}
+
+.whatsapp-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(29, 107, 102, 0.28);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--teal);
+  background: var(--surface-strong);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.chatbot {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: grid;
+  justify-items: end;
+  gap: 12px;
+}
+
+.chat-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 999px;
+  padding: 14px 18px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d4f5d, #b33f2b);
+  box-shadow: 0 20px 45px rgba(26, 54, 62, 0.22);
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.chat-window {
+  width: min(360px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  box-shadow: 0 24px 70px rgba(12, 24, 30, 0.28);
+}
+
+.chat-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 16px;
+  color: #ffffff;
+  background: #142630;
+}
+
+.chat-header strong,
+.chat-header span {
+  display: block;
+}
+
+.chat-header span {
+  color: #d8e5e5;
+  font-size: 0.85rem;
+}
+
+.chat-header button {
+  border: 0;
+  color: #ffffff;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+.chat-messages {
+  display: grid;
+  gap: 10px;
+  max-height: 260px;
+  overflow: auto;
+  padding: 16px;
+}
+
+.chat-messages p {
+  margin: 0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  line-height: 1.45;
+}
+
+.chat-messages .assistant {
+  background: #edf5f4;
+  color: #28444c;
+}
+
+.chat-messages .user {
+  justify-self: end;
+  color: #ffffff;
+  background: #b33f2b;
+}
+
+.chat-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.chat-quick-actions button {
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
+  padding: 8px 10px;
+  color: var(--text-strong);
+  background: var(--surface);
+  cursor: pointer;
+  font-weight: 800;
 }
 
 .contact-form textarea {
@@ -821,7 +1015,8 @@ main[data-theme='dark'] .admin-activity {
   .hero-section,
   .split,
   .contact-section,
-  .admin-section {
+  .admin-section,
+  .services-layout {
     grid-template-columns: 1fr;
   }
 
@@ -846,7 +1041,10 @@ main[data-theme='dark'] .admin-activity {
   .project-grid,
   .skills-grid,
   .blog-grid,
-  .testimonial-grid {
+  .testimonial-grid,
+  .service-grid,
+  .lead-booking-grid,
+  .crm-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -877,6 +1075,20 @@ main[data-theme='dark'] .admin-activity {
 
   .dashboard-visual {
     padding: 16px;
+  }
+
+  .admin-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .chatbot {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .chat-window {
+    width: 100%;
   }
 
   h1 {

@@ -8,7 +8,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const { name, email, message } = JSON.parse(event.body || '{}');
+    const { name, email, message, source = 'Contact form', service = 'General inquiry' } = JSON.parse(event.body || '{}');
 
     if (!name || !email || !message) {
       return {
@@ -27,8 +27,10 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         name,
         email,
+        source,
+        service,
         message,
-        _subject: `Portfolio message from ${name}`,
+        _subject: `Portfolio ${source} from ${name}`,
         _template: 'table',
       }),
     });
