@@ -229,7 +229,7 @@ function App() {
         <div className="dashboard-visual" aria-label="Analytics dashboard preview">
           <div className="avatar-panel" aria-label="Krishna profile avatar">
             <div className="avatar-orbit">
-              <span>KY</span>
+              <img src="/krishna-yadav-profile.jpeg" alt="Krishna Yadav professional portrait" />
             </div>
             <div>
               <strong>Krishna Yadav</strong>
