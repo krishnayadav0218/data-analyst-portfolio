@@ -935,9 +935,32 @@ main[data-theme='dark'] .admin-activity {
 
 .form-status {
   min-height: 24px;
+  border-radius: 8px;
+  padding: 0;
   margin-bottom: 0;
   color: var(--teal);
   font-weight: 700;
+  line-height: 1.45;
+}
+
+.form-status:not(:empty) {
+  padding: 10px 12px;
+  background: color-mix(in srgb, var(--teal) 10%, transparent);
+}
+
+.form-status.success {
+  color: #126b48;
+  background: rgba(42, 168, 118, 0.14);
+}
+
+.form-status.error {
+  color: #9f351f;
+  background: rgba(179, 63, 43, 0.13);
+}
+
+.form-status.pending {
+  color: var(--text-strong);
+  background: rgba(217, 164, 65, 0.16);
 }
 
 @keyframes rise-in {

@@ -31,6 +31,7 @@ function App() {
   const [profile, setProfile] = useState(profileData);
   const [theme, setTheme] = useState('light');
   const [status, setStatus] = useState('');
+  const [statusType, setStatusType] = useState('');
   const [form, setForm] = useState({ name: '', email: '', message: '' });
   const [leadStatus, setLeadStatus] = useState('');
   const [bookingStatus, setBookingStatus] = useState('');
@@ -66,7 +67,7 @@ function App() {
 
     if (apiResponse?.ok) return true;
 
-    const emailResponse = await fetch('https://formsubmit.co/ajax/krishnayadavabc123@gmail.com', {
+    const emailResponse = await fetch('https://formspree.io/f/mbdvyjze', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -78,8 +79,6 @@ function App() {
         source: payload.source ?? 'Portfolio form',
         service: payload.service ?? 'General inquiry',
         message: payload.message,
-        _subject: `Portfolio ${payload.source ?? 'message'} from ${payload.name}`,
-        _template: 'table',
       }),
     }).catch(() => null);
 
@@ -107,15 +106,18 @@ function App() {
   const submitMessage = async (event) => {
     event.preventDefault();
     setStatus('Sending...');
+    setStatusType('pending');
 
     try {
       const sent = await sendPortfolioMessage({ ...form, source: 'Contact form' });
 
       if (!sent) throw new Error('Could not send message.');
       setForm({ name: '', email: '', message: '' });
-      setStatus('Message sent directly to Krishna by email.');
+      setStatus('Thank you. Your message has been sent successfully.');
+      setStatusType('success');
     } catch {
-      setStatus('Email service needs activation. Please use WhatsApp or direct email for now.');
+      setStatus('Message could not be sent. Please try again or use WhatsApp.');
+      setStatusType('error');
     }
   };
 
@@ -132,7 +134,7 @@ function App() {
 
       if (!sent) throw new Error('Could not send lead.');
       setLeadForm({ name: '', email: '', service: 'Dashboard Development', message: '' });
-      setLeadStatus('Lead captured and sent to Krishna by email.');
+      setLeadStatus('Thank you. Your lead has been sent successfully.');
     } catch {
       setLeadStatus('Lead could not be sent right now. Please use WhatsApp.');
     }
@@ -153,7 +155,7 @@ function App() {
 
       if (!sent) throw new Error('Could not send booking.');
       setBookingForm({ name: '', email: '', date: '', message: '' });
-      setBookingStatus('Appointment request sent. Krishna will confirm soon.');
+      setBookingStatus('Thank you. Your appointment request has been sent.');
     } catch {
       setBookingStatus('Booking request could not be sent. Please use WhatsApp.');
     }
@@ -605,7 +607,7 @@ function App() {
           <button type="submit">
             <Send size={18} /> Send message
           </button>
-          <p className="form-status" aria-live="polite">
+          <p className={`form-status ${statusType}`} aria-live="polite">
             {status}
           </p>
         </form>

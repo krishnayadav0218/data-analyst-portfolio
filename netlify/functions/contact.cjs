@@ -18,7 +18,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const mailResponse = await fetch('https://formsubmit.co/ajax/krishnayadavabc123@gmail.com', {
+    const mailResponse = await fetch('https://formspree.io/f/mbdvyjze', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -30,8 +30,6 @@ exports.handler = async (event) => {
         source,
         service,
         message,
-        _subject: `Portfolio ${source} from ${name}`,
-        _template: 'table',
       }),
     });
 
@@ -44,7 +42,7 @@ exports.handler = async (event) => {
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         ok: true,
-        message: 'Message sent to Krishna by email.',
+        message: 'Message sent successfully.',
       }),
     };
   } catch {
