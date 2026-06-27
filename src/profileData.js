@@ -47,6 +47,8 @@ export const profileData = {
       outcome:
         'Improved visibility into sales patterns and enabled faster decision-making through actionable dashboard insights.',
       stack: ['Power BI', 'Data Modeling', 'KPI Design', 'Dashboarding'],
+      liveUrl: 'https://app.powerbi.com/',
+      codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
     {
       title: 'Self-Learning AI for Games',
@@ -59,6 +61,7 @@ export const profileData = {
       outcome:
         'Created an adaptive AI simulation that learns through neuroevolution and performance feedback.',
       stack: ['Python', 'Pygame', 'NEAT-Python', 'Matplotlib'],
+      codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
     {
       title: 'Quantum Error Correction Simulation',
@@ -71,6 +74,7 @@ export const profileData = {
       outcome:
         'Built benchmark logic around qubit overhead, decoherence, and hybrid QEC-mitigation strategies.',
       stack: ['Qiskit', 'Cirq', 'Python', 'Simulation'],
+      codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
     {
       title: 'E-Commerce Website Development',
@@ -83,6 +87,7 @@ export const profileData = {
       outcome:
         'Delivered a functional e-commerce experience with responsive screens and team-based quality delivery.',
       stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
+      codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
   ],
   skills: {

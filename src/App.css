@@ -164,8 +164,8 @@ p {
 h1 {
   max-width: 780px;
   color: var(--text-strong);
-  font-size: 5.4rem;
-  line-height: 0.96;
+  font-size: 4.35rem;
+  line-height: 1.02;
   letter-spacing: 0;
   margin-bottom: 22px;
   text-wrap: balance;
@@ -600,7 +600,8 @@ h3 {
 }
 
 .stack-list,
-.skill-group div {
+.skill-group div,
+.project-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -624,6 +625,25 @@ h3 {
 .skill-group span:hover {
   transform: translateY(-2px);
   background: #f6efe5;
+}
+
+.project-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--text-strong);
+  background: var(--surface-strong);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.project-actions a:first-child {
+  color: #ffffff;
+  border-color: transparent;
+  background: #b33f2b;
 }
 
 .split,
@@ -1053,7 +1073,7 @@ main[data-theme='dark'] .admin-activity {
   }
 
   h1 {
-    font-size: 3.6rem;
+    font-size: 3.1rem;
   }
 
   h2 {
@@ -1115,7 +1135,7 @@ main[data-theme='dark'] .admin-activity {
   }
 
   h1 {
-    font-size: 2.62rem;
+    font-size: 2.35rem;
   }
 
   h2 {

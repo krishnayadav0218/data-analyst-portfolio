@@ -322,6 +322,18 @@ function App() {
                   <span key={tool}>{tool}</span>
                 ))}
               </div>
+              <div className="project-actions">
+                {project.liveUrl && (
+                  <a href={project.liveUrl} target="_blank" rel="noreferrer">
+                    <BarChart3 size={17} /> View Live Dashboard
+                  </a>
+                )}
+                {project.codeUrl && (
+                  <a href={project.codeUrl} target="_blank" rel="noreferrer">
+                    <GitBranch size={17} /> View Code
+                  </a>
+                )}
+              </div>
             </article>
           ))}
         </div>
