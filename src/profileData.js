@@ -47,8 +47,10 @@ export const profileData = {
         'Cleaned and modeled sales data, designed visual KPIs, and built interactive Power BI dashboard views for business users.',
       outcome:
         'Improved visibility into sales patterns and enabled faster decision-making through actionable dashboard insights.',
+      impact: 'Tracked 8 sales KPIs across region, category, revenue, profit, orders, growth, returns, and target achievement.',
       stack: ['Power BI', 'Data Modeling', 'KPI Design', 'Dashboarding'],
-      liveUrl: 'https://app.powerbi.com/',
+      liveUrl: '/power-bi-sales-dashboard-demo.html',
+      liveLabel: 'Interactive Preview',
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
     {
@@ -62,6 +64,7 @@ export const profileData = {
         'Integrated NEAT-Python with Pygame and visualized training behavior using Python analysis libraries.',
       outcome:
         'Created an adaptive AI simulation that learns through neuroevolution and performance feedback.',
+      impact: 'Improved agent survival across training generations and visualized model learning behavior for clear evaluation.',
       stack: ['Python', 'Pygame', 'NEAT-Python', 'Matplotlib'],
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
@@ -76,6 +79,7 @@ export const profileData = {
         'Simulated QEC protocols with IBM Qiskit and Google Cirq, comparing resource-efficient designs for chemistry and optimization use cases.',
       outcome:
         'Built benchmark logic around qubit overhead, decoherence, and hybrid QEC-mitigation strategies.',
+      impact: 'Compared fidelity and error-rate behavior across simulation runs to support more reliable experiment decisions.',
       stack: ['Qiskit', 'Cirq', 'Python', 'Simulation'],
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
@@ -90,6 +94,7 @@ export const profileData = {
         'Built core user journeys using HTML, CSS, JavaScript, PHP, and database-backed website features.',
       outcome:
         'Delivered a functional e-commerce experience with responsive screens and team-based quality delivery.',
+      impact: 'Covered core shopping flow from product discovery to cart and checkout across responsive web screens.',
       stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
@@ -105,6 +110,7 @@ export const profileData = {
         'Built a clean React-based website flow with reusable sections, visual hierarchy, and mobile-friendly styling.',
       outcome:
         'Delivered a polished business website foundation that can support service pages, lead capture, and company branding.',
+      impact: 'Created a deployable business website structure with responsive sections, clear service discovery, and lead-ready pages.',
       stack: ['React', 'JavaScript', 'CSS', 'Responsive UI'],
       liveUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
       codeUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
@@ -121,6 +127,7 @@ export const profileData = {
         'Used automation-focused logic to read candidate details, compare role fit, and support faster screening decisions.',
       outcome:
         'Created an HR-focused tool concept that reduces manual review effort and improves candidate filtering workflow.',
+      impact: 'Designed to reduce resume screening time by up to 40% by prioritizing role-fit signals before manual review.',
       stack: ['Python', 'Automation', 'Resume Screening', 'HR Analytics'],
       liveUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',
       codeUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',

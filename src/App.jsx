@@ -342,6 +342,11 @@ function App() {
               <p>
                 <strong>Outcome:</strong> {project.outcome}
               </p>
+              {project.impact && (
+                <p className="project-impact">
+                  <strong>Impact:</strong> {project.impact}
+                </p>
+              )}
               <div className="stack-list">
                 {project.stack.map((tool) => (
                   <span key={tool}>{tool}</span>
@@ -350,7 +355,7 @@ function App() {
               <div className="project-actions">
                 {project.liveUrl && (
                   <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                    <ExternalLink size={17} /> Live Demo
+                    <ExternalLink size={17} /> {project.liveLabel || 'Live Demo'}
                   </a>
                 )}
                 {project.codeUrl && (

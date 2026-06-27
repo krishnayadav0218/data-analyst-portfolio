@@ -637,6 +637,13 @@ h3 {
   line-height: 1.7;
 }
 
+.project-impact {
+  border-left: 3px solid var(--teal);
+  border-radius: 8px;
+  padding: 12px 14px;
+  background: color-mix(in srgb, var(--teal) 10%, transparent);
+}
+
 .blog-card a {
   display: inline-flex;
   align-items: center;

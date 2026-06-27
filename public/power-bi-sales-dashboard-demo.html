@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales Dashboard Preview | Krishna Yadav</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17313b;
+        --muted: #64727a;
+        --line: #d9e4e4;
+        --paper: #f5faf9;
+        --card: #ffffff;
+        --green: #1d6f5f;
+        --rust: #bd4430;
+        --gold: #d99a2b;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--ink);
+        background:
+          linear-gradient(rgba(217, 228, 228, 0.5) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(217, 228, 228, 0.5) 1px, transparent 1px),
+          var(--paper);
+        background-size: 36px 36px;
+      }
+
+      main {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 34px 0;
+      }
+
+      header {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      h1,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 4vw, 4rem);
+        line-height: 0.95;
+        max-width: 720px;
+      }
+
+      header p {
+        max-width: 360px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .dashboard {
+        display: grid;
+        grid-template-columns: 1.35fr 0.85fr;
+        gap: 18px;
+      }
+
+      .panel,
+      .kpi {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.88);
+        box-shadow: 0 20px 60px rgba(23, 49, 59, 0.08);
+      }
+
+      .kpis {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-bottom: 18px;
+      }
+
+      .kpi {
+        padding: 18px;
+      }
+
+      .kpi span,
+      .panel span {
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .kpi strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.75rem;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .panel h2 {
+        margin: 8px 0 18px;
+        font-size: 1.25rem;
+      }
+
+      .bars {
+        display: grid;
+        gap: 14px;
+      }
+
+      .bar {
+        display: grid;
+        grid-template-columns: 92px 1fr 72px;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+
+      .track {
+        height: 14px;
+        border-radius: 999px;
+        background: #e9efef;
+        overflow: hidden;
+      }
+
+      .fill {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: linear-gradient(90deg, var(--green), var(--gold));
+      }
+
+      .split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-top: 18px;
+      }
+
+      .donut {
+        width: min(220px, 70vw);
+        aspect-ratio: 1;
+        margin: 12px auto 4px;
+        border-radius: 50%;
+        background: conic-gradient(var(--green) 0 44%, var(--rust) 44% 68%, var(--gold) 68% 100%);
+        position: relative;
+      }
+
+      .donut::after {
+        content: "Category Mix";
+        position: absolute;
+        inset: 27%;
+        display: grid;
+        place-items: center;
+        border-radius: inherit;
+        background: #ffffff;
+        color: var(--ink);
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .insights {
+        display: grid;
+        gap: 12px;
+      }
+
+      .insight {
+        border-left: 4px solid var(--green);
+        background: #f6fbfa;
+        padding: 14px;
+        border-radius: 8px;
+        line-height: 1.55;
+      }
+
+      footer {
+        color: var(--muted);
+        margin-top: 20px;
+        line-height: 1.6;
+      }
+
+      @media (max-width: 860px) {
+        header,
+        .dashboard,
+        .split {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .kpis {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .kpis,
+        .bar {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span>Interactive dashboard preview</span>
+          <h1>Sales performance and KPI tracking</h1>
+        </div>
+        <p>
+          A recruiter-friendly preview of the Power BI dashboard concept: regional sales, profit, order
+          trends, returns, and target achievement.
+        </p>
+      </header>
+
+      <section class="kpis" aria-label="Sales KPI cards">
+        <div class="kpi"><span>Revenue</span><strong>₹48.2L</strong></div>
+        <div class="kpi"><span>Profit</span><strong>₹9.6L</strong></div>
+        <div class="kpi"><span>Orders</span><strong>3,420</strong></div>
+        <div class="kpi"><span>Target</span><strong>112%</strong></div>
+      </section>
+
+      <section class="dashboard">
+        <article class="panel">
+          <span>Regional revenue</span>
+          <h2>Top performing markets</h2>
+          <div class="bars">
+            <div class="bar"><b>West</b><div class="track"><span class="fill" style="width: 94%"></span></div><b>₹15.4L</b></div>
+            <div class="bar"><b>North</b><div class="track"><span class="fill" style="width: 82%"></span></div><b>₹13.1L</b></div>
+            <div class="bar"><b>South</b><div class="track"><span class="fill" style="width: 73%"></span></div><b>₹11.8L</b></div>
+            <div class="bar"><b>East</b><div class="track"><span class="fill" style="width: 49%"></span></div><b>₹7.9L</b></div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <span>Product category</span>
+          <h2>Sales contribution</h2>
+          <div class="donut" aria-label="Category contribution chart"></div>
+        </article>
+      </section>
+
+      <section class="split">
+        <article class="panel">
+          <span>Decision notes</span>
+          <h2>Key insights</h2>
+          <div class="insights">
+            <div class="insight">West region leads revenue with strong target achievement and lower return pressure.</div>
+            <div class="insight">East region needs focused campaign review because revenue contribution is below average.</div>
+            <div class="insight">Dashboard tracks 8 KPIs for fast weekly business review and consulting-style reporting.</div>
+          </div>
+        </article>
+        <article class="panel">
+          <span>Analyst role</span>
+          <h2>What Krishna built</h2>
+          <div class="insights">
+            <div class="insight">Defined KPI structure, sales story, and executive dashboard layout.</div>
+            <div class="insight">Modeled sales measures for revenue, profit, orders, target, and return tracking.</div>
+            <div class="insight">Converted raw business data into a recruiter-readable dashboard case study.</div>
+          </div>
+        </article>
+      </section>
+
+      <footer>
+        This page is an interactive portfolio preview. Replace it with your real Power BI Publish-to-Web
+        link when your dashboard is published from Power BI Service.
+      </footer>
+    </main>
+  </body>
+</html>
