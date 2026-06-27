@@ -1,6 +1,6 @@
 const profile = {
   name: 'Krishna Yadav',
-  role: 'Data Analyst | Aspiring Data Scientist',
+  role: 'Data Analyst | BI Developer | Web Application Builder',
   location: 'Mumbai, India',
   email: 'krishnayadavabc123@gmail.com',
   phone: '7992153750',
@@ -8,11 +8,11 @@ const profile = {
   github: 'https://github.com/krishnayadav0218',
   instagram: 'https://www.instagram.com/yadvanshi_anubhav0218/?hl=en',
   summary:
-    'Aspiring data scientist with hands-on experience in dashboard creation, data visualization, machine learning model development, and business-ready reporting using Python, SQL, Power BI, Tableau, and Excel.',
+    'I build business dashboards, data analysis workflows, and modern web applications using Python, SQL, Power BI, React, and Node.js.',
   headline:
-    'Turning raw business data into decision-ready dashboards, models, and insights for consulting and enterprise teams.',
+    "Hi, I'm Krishna. I build dashboards, data tools, and scalable web applications.",
   metrics: [
-    { value: '6+', label: 'analytics and AI projects' },
+    { value: '6+', label: 'featured projects' },
     { value: '5', label: 'IBM data certificates' },
     { value: '2025', label: 'MCA Data Science' },
   ],
@@ -42,6 +42,7 @@ const profile = {
       year: 'Power BI',
       problem:
         'Regional sales performance needed a clear view across time periods, markets, and key performance indicators.',
+      role: 'Designed the KPI structure, cleaned the dataset, modeled sales metrics, and built the dashboard flow.',
       approach:
         'Cleaned and modeled sales data, designed visual KPIs, and built interactive Power BI dashboard views for business users.',
       outcome:
@@ -56,6 +57,7 @@ const profile = {
       year: 'NEAT',
       problem:
         'Demonstrate reinforcement-style learning by training an AI agent to play Flappy Bird without hard-coded gameplay rules.',
+      role: 'Built the Python simulation, integrated NEAT training, and visualized agent performance across generations.',
       approach:
         'Integrated NEAT-Python with Pygame and visualized training behavior using Python analysis libraries.',
       outcome:
@@ -69,6 +71,7 @@ const profile = {
       year: '2024',
       problem:
         'Noisy Intermediate-Scale Quantum systems require benchmarking of fidelity, error rates, and mitigation strategies.',
+      role: 'Implemented simulation workflows and compared QEC behavior across fidelity and error-rate benchmarks.',
       approach:
         'Simulated QEC protocols with IBM Qiskit and Google Cirq, comparing resource-efficient designs for chemistry and optimization use cases.',
       outcome:
@@ -82,12 +85,45 @@ const profile = {
       year: '2022',
       problem:
         'A web storefront needed product listing, login, cart, payment flow, mobile responsiveness, and basic SEO readiness.',
+      role: 'Developed core storefront pages, user flow, cart behavior, and database-backed website features.',
       approach:
         'Built core user journeys using HTML, CSS, JavaScript, PHP, and database-backed website features.',
       outcome:
         'Delivered a functional e-commerce experience with responsive screens and team-based quality delivery.',
       stack: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
+    },
+    {
+      title: 'Corex Enterprises',
+      tag: 'Business Website',
+      year: 'React',
+      problem:
+        'A company-style web presence needed a modern interface, clear sections, responsive layout, and professional presentation.',
+      role:
+        'Created the frontend structure, improved page sections, organized business content, and prepared it for web deployment.',
+      approach:
+        'Built a clean React-based website flow with reusable sections, visual hierarchy, and mobile-friendly styling.',
+      outcome:
+        'Delivered a polished business website foundation that can support service pages, lead capture, and company branding.',
+      stack: ['React', 'JavaScript', 'CSS', 'Responsive UI'],
+      liveUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
+      codeUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
+    },
+    {
+      title: 'HR CV Shortlister',
+      tag: 'AI / HR Tech',
+      year: 'Python',
+      problem:
+        'Recruiters need a faster way to review resumes, compare candidate profiles, and shortlist relevant applicants.',
+      role:
+        'Built the shortlisting logic, structured resume evaluation flow, and designed the project for HR screening use cases.',
+      approach:
+        'Used automation-focused logic to read candidate details, compare role fit, and support faster screening decisions.',
+      outcome:
+        'Created an HR-focused tool concept that reduces manual review effort and improves candidate filtering workflow.',
+      stack: ['Python', 'Automation', 'Resume Screening', 'HR Analytics'],
+      liveUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',
+      codeUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',
     },
   ],
   skills: {
@@ -151,7 +187,7 @@ const profile = {
   ],
   adminStats: [
     { label: 'Portfolio sections', value: '14' },
-    { label: 'Projects tracked', value: '4' },
+    { label: 'Projects tracked', value: '6' },
     { label: 'Skills grouped', value: '6' },
     { label: 'Contact status', value: 'Email ready' },
   ],

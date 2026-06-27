@@ -8,6 +8,7 @@ import {
   Camera,
   CalendarCheck,
   CheckCircle2,
+  Code2,
   Download,
   Database,
   ExternalLink,
@@ -19,10 +20,12 @@ import {
   MapPin,
   Moon,
   Phone,
+  Server,
   Send,
   Sun,
   Target,
   Users,
+  Wrench,
 } from 'lucide-react';
 import './App.css';
 import { profileData } from './profileData';
@@ -53,6 +56,15 @@ function App() {
   }, []);
 
   const skillGroups = useMemo(() => Object.entries(profile.skills ?? {}), [profile.skills]);
+  const skillIcons = {
+    Languages: Code2,
+    Analytics: BarChart3,
+    Libraries: Database,
+    Databases: Server,
+    Web: Code2,
+    AI: Bot,
+    default: Wrench,
+  };
   const toggleTheme = () => setTheme((currentTheme) => (currentTheme === 'light' ? 'dark' : 'light'));
   const whatsappUrl = `https://wa.me/91${profile.phone}?text=${encodeURIComponent(
     'Hi Krishna, I visited your portfolio and want to discuss an analytics project.',
@@ -184,6 +196,7 @@ function App() {
 
       <section className="hero-section" id="home">
         <div className="hero-copy">
+          <p className="role-pill">{profile.role}</p>
           <h1>{profile.headline}</h1>
           <p className="intro">{profile.summary}</p>
           <div className="hero-actions">
@@ -214,6 +227,15 @@ function App() {
         </div>
 
         <div className="dashboard-visual" aria-label="Analytics dashboard preview">
+          <div className="avatar-panel" aria-label="Krishna profile avatar">
+            <div className="avatar-orbit">
+              <span>KY</span>
+            </div>
+            <div>
+              <strong>Krishna Yadav</strong>
+              <p>Data analyst building dashboards, web apps, and automation-ready tools.</p>
+            </div>
+          </div>
           <div className="visual-header">
             <div>
               <span>Client Growth View</span>
@@ -312,6 +334,9 @@ function App() {
                 <strong>Problem:</strong> {project.problem}
               </p>
               <p>
+                <strong>My Role:</strong> {project.role}
+              </p>
+              <p>
                 <strong>Approach:</strong> {project.approach}
               </p>
               <p>
@@ -325,12 +350,12 @@ function App() {
               <div className="project-actions">
                 {project.liveUrl && (
                   <a href={project.liveUrl} target="_blank" rel="noreferrer">
-                    <BarChart3 size={17} /> View Live Dashboard
+                    <ExternalLink size={17} /> Live Demo
                   </a>
                 )}
                 {project.codeUrl && (
                   <a href={project.codeUrl} target="_blank" rel="noreferrer">
-                    <GitBranch size={17} /> View Code
+                    <GitBranch size={17} /> GitHub
                   </a>
                 )}
               </div>
@@ -374,7 +399,13 @@ function App() {
           <div className="skills-grid">
             {skillGroups.map(([group, skills]) => (
               <article className="skill-group" key={group}>
-                <h3>{group}</h3>
+                <h3>
+                  {(() => {
+                    const Icon = skillIcons[group] ?? skillIcons.default;
+                    return <Icon size={20} />;
+                  })()}
+                  {group}
+                </h3>
                 <div>
                   {skills.map((skill) => (
                     <span key={skill}>{skill}</span>
