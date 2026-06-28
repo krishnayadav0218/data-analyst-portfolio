@@ -41,16 +41,16 @@ export const profileData = {
       tag: 'Business Intelligence',
       year: 'Power BI',
       problem:
-        'Regional sales performance needed a clear view across time periods, markets, and key performance indicators.',
-      role: 'Designed the KPI structure, cleaned the dataset, modeled sales metrics, and built the dashboard flow.',
+        'Sales leaders needed a deployed dashboard experience to monitor revenue, profit, orders, regional performance, and KPI movement quickly.',
+      role: 'Designed the dashboard story, organized KPI sections, built the deployed analytics interface, and shaped the recruiter-facing live view.',
       approach:
-        'Cleaned and modeled sales data, designed visual KPIs, and built interactive Power BI dashboard views for business users.',
+        'Created a live sales dashboard with KPI cards, performance visuals, regional insights, and a clean layout for fast business review.',
       outcome:
-        'Improved visibility into sales patterns and enabled faster decision-making through actionable dashboard insights.',
+        'Delivered a live dashboard experience that makes sales trends, weak regions, and target performance easier to scan.',
       impact: 'Tracked 8 sales KPIs across region, category, revenue, profit, orders, growth, returns, and target achievement.',
-      stack: ['Power BI', 'Data Modeling', 'KPI Design', 'Dashboarding'],
-      liveUrl: '/power-bi-sales-dashboard-demo.html',
-      liveLabel: 'Interactive Preview',
+      stack: ['Power BI', 'React', 'KPI Design', 'Dashboarding'],
+      liveUrl: 'https://sales-dashboard0218.vercel.app/',
+      liveLabel: 'Live Dashboard',
       codeUrl: 'https://github.com/krishnayadav0218/data-analyst-portfolio',
     },
     {
@@ -103,16 +103,16 @@ export const profileData = {
       tag: 'Business Website',
       year: 'React',
       problem:
-        'A company-style web presence needed a modern interface, clear sections, responsive layout, and professional presentation.',
+        'Corex Enterprises needed a deployed business website with a modern first impression, service clarity, and responsive presentation.',
       role:
-        'Created the frontend structure, improved page sections, organized business content, and prepared it for web deployment.',
+        'Created the frontend structure, organized business content, improved page sections, and prepared the site for Netlify deployment.',
       approach:
-        'Built a clean React-based website flow with reusable sections, visual hierarchy, and mobile-friendly styling.',
+        'Built a clean React-based website flow with reusable sections, professional visual hierarchy, and mobile-friendly styling.',
       outcome:
-        'Delivered a polished business website foundation that can support service pages, lead capture, and company branding.',
-      impact: 'Created a deployable business website structure with responsive sections, clear service discovery, and lead-ready pages.',
+        'Delivered a live business website that supports service discovery, brand trust, and future lead capture improvements.',
+      impact: 'Created a deployed company website with responsive sections, clear service discovery, and production-ready presentation.',
       stack: ['React', 'JavaScript', 'CSS', 'Responsive UI'],
-      liveUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
+      liveUrl: 'https://corex-exnterprises.netlify.app/',
       codeUrl: 'https://github.com/krishnayadav0218/corex-exnterprises',
     },
     {
@@ -120,16 +120,16 @@ export const profileData = {
       tag: 'AI / HR Tech',
       year: 'Python',
       problem:
-        'Recruiters need a faster way to review resumes, compare candidate profiles, and shortlist relevant applicants.',
+        'Recruiters need a faster deployed tool to review resumes, compare candidate profiles, and shortlist relevant applicants.',
       role:
-        'Built the shortlisting logic, structured resume evaluation flow, and designed the project for HR screening use cases.',
+        'Built the shortlisting flow, structured candidate evaluation, and deployed the project for HR screening use cases.',
       approach:
-        'Used automation-focused logic to read candidate details, compare role fit, and support faster screening decisions.',
+        'Used automation-focused logic to collect candidate inputs, compare role fit, and support faster screening decisions.',
       outcome:
-        'Created an HR-focused tool concept that reduces manual review effort and improves candidate filtering workflow.',
+        'Delivered a live HR tech tool that reduces manual review effort and improves candidate filtering workflow.',
       impact: 'Designed to reduce resume screening time by up to 40% by prioritizing role-fit signals before manual review.',
       stack: ['Python', 'Automation', 'Resume Screening', 'HR Analytics'],
-      liveUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',
+      liveUrl: 'https://talent-shortlist-pro.onrender.com/',
       codeUrl: 'https://github.com/krishnayadav0218/hr-cv-shortlister',
     },
   ],

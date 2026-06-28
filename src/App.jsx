@@ -467,8 +467,8 @@ function App() {
           </p>
           <h2>Portfolio content control center</h2>
           <p>
-            A clean admin-style overview for tracking sections, projects, skills, contact readiness, and publishing
-            status.
+            A focused control view for keeping portfolio content, featured work, contact systems, and launch readiness
+            organized in one place.
           </p>
         </div>
         <div className="admin-panel">
