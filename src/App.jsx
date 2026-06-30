@@ -28,9 +28,11 @@ import {
   Wrench,
 } from 'lucide-react';
 import './App.css';
+import AdminPanel from './admin/AdminPanel';
 import { profileData } from './profileData';
 
 function App() {
+  const isAdminRoute = window.location.pathname === '/admin';
   const [profile, setProfile] = useState(profileData);
   const [theme, setTheme] = useState('light');
   const [status, setStatus] = useState('');
@@ -69,6 +71,10 @@ function App() {
   const whatsappUrl = `https://wa.me/91${profile.phone}?text=${encodeURIComponent(
     'Hi Krishna, I visited your portfolio and want to discuss an analytics project.',
   )}`;
+
+  if (isAdminRoute) {
+    return <AdminPanel />;
+  }
 
   const sendPortfolioMessage = async (payload) => {
     const apiResponse = await fetch('/api/contact', {
