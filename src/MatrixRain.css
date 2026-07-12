@@ -1,0 +1,23 @@
+.matrix-rain-canvas {
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none; /* clicks pass through to content below */
+  border-radius: inherit;
+}
+
+/* Wrapper you put around your Skills / Projects section content */
+/* Add class="matrix-section-wrap" to your section div */
+.matrix-section-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* All direct content inside the section must be above the canvas */
+.matrix-section-wrap > *:not(.matrix-rain-canvas) {
+  position: relative;
+  z-index: 1;
+}

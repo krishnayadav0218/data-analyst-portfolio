@@ -1,0 +1,31 @@
+.hero3d-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  /* Lets visitors grab and spin the scene, while the hero copy and
+     dashboard card (both z-index: 1 above this) still receive their own
+     clicks normally since they sit on top wherever they're drawn. */
+  pointer-events: auto;
+  cursor: grab;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 30%, #000 55%);
+  mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.55) 30%, #000 55%);
+}
+
+.hero3d-canvas.is-grabbing {
+  cursor: grabbing;
+}
+
+@media (max-width: 920px) {
+  .hero3d-canvas {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 22%, #000 46%);
+    mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.5) 22%, #000 46%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero3d-canvas {
+    pointer-events: none;
+    cursor: default;
+  }
+}
