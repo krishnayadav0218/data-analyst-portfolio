@@ -681,11 +681,16 @@
   "blog": [
     {
       "title": "excel",
-      "category": "",
-      "readTime": "",
-      "summary": "",
+      "category": "xdfgb",
+      "readTime": "edrghd",
+      "summary": "zdhfrtsygjhdgfserty",
       "publishedDate": "2026-07-13",
-      "content": []
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "fsghfdsfghw45rt6yuyhfgdaerty"
+        }
+      ]
     },
     {
       "title": "How I approach a sales dashboard project",
