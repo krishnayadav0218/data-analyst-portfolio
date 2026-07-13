@@ -677,5 +677,351 @@
       "stage": "Booking status",
       "count": "Ready"
     }
+  ],
+  "blog": [
+    {
+      "title": "excel",
+      "category": "",
+      "readTime": "",
+      "summary": "",
+      "publishedDate": "2026-07-13",
+      "content": []
+    },
+    {
+      "title": "How I approach a sales dashboard project",
+      "category": "Power BI",
+      "readTime": "4 min read",
+      "summary": "A practical breakdown of how I clean data, choose KPIs, design visuals, and turn dashboard pages into business decisions."
+    },
+    {
+      "title": "Python libraries I use for analytics",
+      "category": "Python",
+      "readTime": "3 min read",
+      "summary": "Notes on Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn for analysis, visualization, and machine learning prototypes."
+    },
+    {
+      "title": "What makes a good analyst portfolio",
+      "category": "Career",
+      "readTime": "5 min read",
+      "summary": "A portfolio should show business context, tools used, measurable outcomes, and clean storytelling instead of only screenshots."
+    },
+    {
+      "title": "How to Build an Excel Dashboard From Scratch (Step-by-Step Guide)",
+      "category": "Excel",
+      "readTime": "7 min read",
+      "summary": "A practical walkthrough for turning raw spreadsheet data into a clean, interactive Excel dashboard with KPIs, charts, and slicers.",
+      "publishedDate": "2026-01-15",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "An Excel dashboard is one of the fastest ways to turn a messy spreadsheet into something a manager can actually use to make decisions. This guide walks through the exact process I follow when building one, from raw data to a finished, interactive dashboard."
+        },
+        {
+          "type": "heading",
+          "text": "Step 1: Get the Data Into a Proper Table"
+        },
+        {
+          "type": "paragraph",
+          "text": "Before any chart gets built, the raw data needs to sit inside an Excel Table (Insert > Table), not just a plain range. Tables auto-expand as new rows are added, keep formulas consistent, and make every downstream step easier, especially PivotTables and slicers."
+        },
+        {
+          "type": "heading",
+          "text": "Step 2: Clean the Data With Power Query"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use Power Query (Data > Get & Transform) to remove duplicates, fix inconsistent date formats, trim whitespace, and split combined columns. Doing this once in Power Query means the cleanup step reruns automatically every time the source data refreshes, instead of manual cleanup every month."
+        },
+        {
+          "type": "heading",
+          "text": "Step 3: Decide the KPIs Before Building Any Chart"
+        },
+        {
+          "type": "paragraph",
+          "text": "The biggest mistake in dashboard building is starting with charts instead of questions. Pick 4-8 KPIs that actually matter to the business, revenue, profit margin, order volume, top region, or customer churn are common examples, and design every visual around answering those questions clearly."
+        },
+        {
+          "type": "heading",
+          "text": "Step 4: Build the Core Visuals"
+        },
+        {
+          "type": "list",
+          "items": [
+            "PivotTables and PivotCharts for summarizing large datasets quickly",
+            "Line charts for trends over time (monthly revenue, order growth)",
+            "Bar charts for comparisons across categories (region, product, team)",
+            "Card-style cells (large bold numbers) for single headline KPIs",
+            "Conditional formatting or heatmaps to highlight outliers at a glance"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Step 5: Add Interactivity With Slicers and Dropdowns"
+        },
+        {
+          "type": "paragraph",
+          "text": "Slicers connected to PivotTables let anyone viewing the dashboard filter by region, date, or category without touching a formula. Data validation dropdowns paired with INDEX/MATCH or XLOOKUP can drive dynamic summary views for non-technical users."
+        },
+        {
+          "type": "heading",
+          "text": "Step 6: Design for Clarity, Not Decoration"
+        },
+        {
+          "type": "paragraph",
+          "text": "Keep the color palette to two or three consistent colors, align everything to a grid, and remove gridlines and unnecessary borders. A dashboard should be scannable in under ten seconds, if a viewer has to hunt for the number that matters, the layout needs simplifying."
+        },
+        {
+          "type": "heading",
+          "text": "Common Mistakes to Avoid"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Hardcoding values instead of linking to the data table",
+            "Too many colors or 3D chart effects that reduce readability",
+            "Mixing raw data sheets with the dashboard view instead of separating them",
+            "Skipping data validation, so a single bad row breaks every chart"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Once the structure is solid, this same workflow, clean data, clear KPIs, purposeful charts, translates directly into tools like Power BI, which is usually the next step after Excel dashboards."
+        }
+      ]
+    },
+    {
+      "title": "Power BI for Beginners: A Practical Starting Guide",
+      "category": "Power BI",
+      "readTime": "8 min read",
+      "summary": "Everything a first-time Power BI user needs to go from installing the tool to publishing an interactive report: data loading, modeling, DAX basics, and more.",
+      "publishedDate": "2026-02-10",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Power BI is Microsoft's business intelligence tool for turning raw data into interactive reports and dashboards. This guide covers the core workflow every beginner needs to understand before building their first real report."
+        },
+        {
+          "type": "heading",
+          "text": "1. Install Power BI Desktop"
+        },
+        {
+          "type": "paragraph",
+          "text": "Power BI Desktop is free and available directly from Microsoft. It is where reports get built; the separate Power BI Service (app.powerbi.com) is where finished reports get published and shared with a team."
+        },
+        {
+          "type": "heading",
+          "text": "2. Connect to a Data Source"
+        },
+        {
+          "type": "paragraph",
+          "text": "Use Get Data to connect to Excel files, CSVs, SQL Server, or web APIs. For a first project, an Excel sales dataset is the easiest starting point since the structure is already familiar."
+        },
+        {
+          "type": "heading",
+          "text": "3. Clean Data in Power Query Editor"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every connected table opens in Power Query Editor first. This is where column types get fixed, blank rows get removed, and columns get renamed before anything touches a chart. Treat this step as non-negotiable, dashboards built on unclean data are unreliable no matter how good the visuals look."
+        },
+        {
+          "type": "heading",
+          "text": "4. Build the Data Model (Relationships)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Real projects usually involve multiple tables, sales, products, regions, dates. In the Model view, connect these tables using relationships (usually one-to-many) so a single slicer can filter every visual across the report. A clean star schema, one central fact table connected to smaller dimension tables, keeps performance fast and DAX formulas simple."
+        },
+        {
+          "type": "heading",
+          "text": "5. Learn Basic DAX"
+        },
+        {
+          "type": "paragraph",
+          "text": "DAX (Data Analysis Expressions) is the formula language behind every calculated metric. Three functions cover most beginner needs:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "SUM() and AVERAGE() for basic aggregations",
+            "CALCULATE() to apply filters to an aggregation, the single most important DAX function to learn early",
+            "SUMX() for row-by-row calculations before summing, useful for metrics like revenue = price × quantity"
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "6. Build the First Visuals"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start simple: a bar chart for category comparison, a line chart for trend over time, and a few KPI cards for headline numbers. Add slicers for date range and category so the report becomes interactive rather than a static image."
+        },
+        {
+          "type": "heading",
+          "text": "7. Publish and Share"
+        },
+        {
+          "type": "paragraph",
+          "text": "Once the report looks right, use Publish to push it to the Power BI Service, where it can be shared as a link, embedded, or scheduled to refresh automatically from the original data source."
+        },
+        {
+          "type": "heading",
+          "text": "Where to Go Next"
+        },
+        {
+          "type": "paragraph",
+          "text": "After the basics, the next skills worth learning are DAX time-intelligence functions (like SAMEPERIODLASTYEAR), bookmarks for interactive navigation, and Power BI Service workspaces for team collaboration."
+        }
+      ]
+    },
+    {
+      "title": "20 SQL Interview Questions Every Data Analyst Should Know",
+      "category": "SQL",
+      "readTime": "9 min read",
+      "summary": "A concise set of SQL interview questions and answers covering joins, aggregations, subqueries, and window functions, organized from basic to advanced.",
+      "publishedDate": "2026-03-05",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "These are the SQL questions that come up most often in data analyst interviews, grouped by difficulty. Understanding the reasoning behind each answer matters more than memorizing the syntax."
+        },
+        {
+          "type": "heading",
+          "text": "Basics"
+        },
+        {
+          "type": "list",
+          "items": [
+            "What is the difference between WHERE and HAVING? WHERE filters rows before grouping; HAVING filters groups after a GROUP BY / aggregation has been applied.",
+            "What is the difference between DELETE, TRUNCATE, and DROP? DELETE removes rows and can be rolled back; TRUNCATE removes all rows quickly and resets identity but can't be filtered; DROP removes the entire table structure.",
+            "What is a primary key vs a foreign key? A primary key uniquely identifies each row in a table; a foreign key references a primary key in another table to enforce a relationship.",
+            "What does DISTINCT do? It removes duplicate rows from the result set.",
+            "What is the difference between UNION and UNION ALL? UNION removes duplicate rows across the combined result sets; UNION ALL keeps every row, including duplicates, and is faster since it skips the duplicate check."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Joins and Grouping"
+        },
+        {
+          "type": "list",
+          "items": [
+            "What is the difference between INNER JOIN and LEFT JOIN? INNER JOIN returns only matching rows from both tables; LEFT JOIN returns all rows from the left table plus matches from the right, filling unmatched columns with NULL.",
+            "What does a self join do? It joins a table to itself, typically used for hierarchical data like an employee table referencing a manager's ID in the same table.",
+            "How do you find duplicate rows in a table? Group by the columns that define a duplicate and use HAVING COUNT(*) > 1.",
+            "What is the difference between GROUP BY and ORDER BY? GROUP BY aggregates rows into summary groups; ORDER BY simply sorts the final result set.",
+            "What happens if you SELECT a column that isn't in the GROUP BY clause or an aggregate function? Most databases will throw an error, since it's ambiguous which row's value should represent the group."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Subqueries and Intermediate Concepts"
+        },
+        {
+          "type": "list",
+          "items": [
+            "What is a subquery? A query nested inside another query, often used in WHERE or FROM clauses to filter or compute intermediate results.",
+            "What is the difference between a subquery and a JOIN? A JOIN combines columns from multiple tables into one result set; a subquery typically returns a single value or list used to filter another query. JOINs are often faster for large datasets.",
+            "What is a Common Table Expression (CTE)? A named temporary result set defined with WITH, used to make complex queries more readable by breaking them into logical steps.",
+            "What is the difference between a correlated and a non-correlated subquery? A correlated subquery references a column from the outer query and runs once per outer row; a non-correlated subquery runs independently and only once."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Advanced: Window Functions and Performance"
+        },
+        {
+          "type": "list",
+          "items": [
+            "What is a window function? A calculation across a set of related rows (a 'window') without collapsing them into a single output row, unlike GROUP BY. Common examples: ROW_NUMBER(), RANK(), and SUM() OVER().",
+            "What is the difference between RANK() and DENSE_RANK()? RANK() skips numbers after a tie (1,2,2,4); DENSE_RANK() does not (1,2,2,3).",
+            "How would you find the second-highest salary in a table? Use LIMIT/OFFSET, a subquery with MAX() excluding the top value, or DENSE_RANK() filtered to rank 2.",
+            "What is an index and why does it matter? An index is a data structure that speeds up row lookups on specific columns, at the cost of slightly slower writes and extra storage.",
+            "What is normalization? The process of structuring tables to reduce data redundancy, typically by splitting data into related tables connected by keys."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "In an interview, walking through your reasoning out loud, why a LEFT JOIN instead of INNER, why a CTE instead of a nested subquery, matters more than getting the syntax perfect on the first try."
+        }
+      ]
+    },
+    {
+      "title": "Data Analyst Roadmap: Skills, Tools, and Learning Path",
+      "category": "Career",
+      "readTime": "6 min read",
+      "summary": "A structured path from zero to job-ready data analyst: which skills to learn first, which tools matter, and how to build a portfolio that gets interviews.",
+      "publishedDate": "2026-04-02",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "There are a lot of overlapping tools in the data analytics space, and it's easy to spend months learning things in the wrong order. This is the sequence that gets someone from beginner to job-ready the fastest."
+        },
+        {
+          "type": "heading",
+          "text": "Step 1: Excel (2-3 weeks)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Excel is still the most commonly used analytics tool in real companies. Focus on PivotTables, VLOOKUP/XLOOKUP, basic charting, and simple dashboards before moving on. This step also builds the spreadsheet-thinking mindset that makes SQL and Power BI easier to pick up later."
+        },
+        {
+          "type": "heading",
+          "text": "Step 2: SQL (3-4 weeks)"
+        },
+        {
+          "type": "paragraph",
+          "text": "SQL is non-negotiable for almost every data analyst role. Learn SELECT/WHERE/GROUP BY first, then JOINs, then subqueries and CTEs, then window functions. Practicing on a real dataset (even a free one from Kaggle) matters more than reading theory."
+        },
+        {
+          "type": "heading",
+          "text": "Step 3: Data Visualization - Power BI or Tableau (4-6 weeks)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Pick one BI tool and go deep rather than learning both shallowly. Power BI is the more in-demand choice in most markets right now. Learn data modeling, DAX basics, and how to design a dashboard around business KPIs, not just how to make charts."
+        },
+        {
+          "type": "heading",
+          "text": "Step 4: Python or R for Analysis (4-6 weeks)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Python with Pandas and NumPy is the more common choice for analyst roles. Focus on data cleaning, exploratory data analysis, and basic visualization with Matplotlib or Seaborn. Machine learning is optional at this stage, most analyst roles need clean analysis, not model building."
+        },
+        {
+          "type": "heading",
+          "text": "Step 5: Statistics Fundamentals (2-3 weeks)"
+        },
+        {
+          "type": "paragraph",
+          "text": "Mean, median, standard deviation, correlation vs causation, and basic hypothesis testing come up constantly in interviews and real reporting work. This doesn't need to be a full statistics course, just enough to reason correctly about data."
+        },
+        {
+          "type": "heading",
+          "text": "Step 6: Build 3-4 Real Portfolio Projects"
+        },
+        {
+          "type": "paragraph",
+          "text": "Recruiters want to see a project that tells a business story: a problem, the approach taken, and a measurable outcome, not just a chart with no context. A sales dashboard, an HR or churn analysis tool, and one end-to-end SQL-to-BI pipeline project cover most of what recruiters look for."
+        },
+        {
+          "type": "heading",
+          "text": "Step 7: Apply, Get Feedback, Iterate"
+        },
+        {
+          "type": "paragraph",
+          "text": "Start applying before every skill feels 'complete'. Real interview feedback, the questions that stump you, the gaps that show up, is a faster teacher than more tutorials. Keep refining the portfolio and resume based on what actually comes up in interviews."
+        },
+        {
+          "type": "heading",
+          "text": "Realistic Timeline"
+        },
+        {
+          "type": "paragraph",
+          "text": "For someone studying consistently, 4-6 months covers the full path from beginner to job-ready, faster with prior technical background, slower if learning part-time alongside other commitments. Consistency matters more than speed."
+        }
+      ]
+    }
   ]
 }
