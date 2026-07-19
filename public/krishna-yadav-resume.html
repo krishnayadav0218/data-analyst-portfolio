@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Krishna Yadav Resume</title>
+<style>
+  @page { size: 612px 792px; margin: 0; }
+  * { box-sizing: border-box; }
+  body {
+    width: 612px;
+    min-height: 792px;
+    margin: 0;
+    padding: 16px 40px 12px 40px;
+    color: #172b34;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5px;
+    line-height: 1.2;
+  }
+  h1 {
+    margin: 0 0 2px 0;
+    color: #1d4f5d;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+  }
+  .contact {
+    color: #52666d;
+    font-size: 8.5px;
+    margin: 0 0 8px 0;
+  }
+  h2 {
+    margin: 6px 0 3px 0;
+    border-bottom: 1px solid #d8e3e4;
+    padding-bottom: 2px;
+    color: #b33f2b;
+    font-size: 10px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+  }
+  h2:first-of-type { margin-top: 0; }
+  p.summary { margin: 0; text-align: justify; }
+  .skills-line { margin: 0 0 5px 0; }
+  .skills-line b { color: #1d4f5d; }
+  .exp-block, .proj-block { margin-bottom: 5px; }
+  .exp-block:last-child, .proj-block:last-child { margin-bottom: 0; }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .role { font-weight: bold; color: #172b34; }
+  .org { font-weight: normal; color: #52666d; }
+  .date { color: #52666d; white-space: nowrap; }
+  ul { margin: 2px 0 0 0; padding-left: 15px; }
+  li { margin-bottom: 1px; }
+  .tools { margin: 2px 0 0 0; color: #52666d; font-style: italic; }
+  .edu-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+  .edu-left b { color: #172b34; }
+  .edu-left div { color: #52666d; font-size: 9.2px; }
+  .certs { margin: 0; }
+</style>
+</head>
+<body>
+  <h1>KRISHNA YADAV</h1>
+  <p class="contact">
+    Data Analyst&nbsp;&nbsp;|&nbsp;&nbsp;Mumbai, India&nbsp;&nbsp;|&nbsp;&nbsp;+91 7992153750&nbsp;&nbsp;|&nbsp;&nbsp;krishnayadavabc123@gmail.com<br/>
+    linkedin.com/in/krishnayadav0218&nbsp;&nbsp;|&nbsp;&nbsp;krishna-portfolio0218.vercel.app
+  </p>
+
+  <h2>Professional Summary</h2>
+  <p class="summary">
+    Aspiring Data Analyst with a Master's in Data Science and hands-on experience in data cleaning, exploratory analysis, dashboard development,
+    and predictive modeling. Proficient in Python, SQL, and Power BI, with a track record of designing end-to-end analytics solutions - from data
+    pipelines to executive dashboards - that turn raw data into actionable business insights. Built and deployed a live portfolio of five production-style analytics projects.
+  </p>
+
+  <h2>Experience</h2>
+  <div class="exp-block">
+    <div class="row">
+      <span class="role">Data Analyst Intern <span class="org">— Own Techno</span></span>
+      <span class="date">Jan 2025 - Dec 2025</span>
+    </div>
+    <ul>
+      <li>Analyzed business and sales data using Excel and SQL to identify trends and generate actionable insights for stakeholders.</li>
+      <li>Built and maintained interactive Power BI dashboards to track key performance metrics and support data-driven decision-making.</li>
+      <li>Performed data cleaning, validation, and reporting to ensure accuracy and reliability of business data.</li>
+    </ul>
+  </div>
+
+  <h2>Core Skills</h2>
+  <p class="skills-line"><b>Data Analysis &amp; Modeling:</b> Python (Pandas, NumPy, Scikit-learn), Statistical Analysis, Predictive Modeling, Exploratory Data Analysis</p>
+  <p class="skills-line"><b>Query &amp; Database:</b> SQL, MySQL, PostgreSQL, NoSQL Fundamentals</p>
+  <p class="skills-line"><b>Data Visualization &amp; BI:</b> Power BI (DAX, KPI Design, Dashboarding), Tableau, MS Excel, Matplotlib, Seaborn, Chart.js</p>
+  <p class="skills-line"><b>Data Engineering &amp; Automation:</b> Apache Kafka, Docker, ETL Pipelines, Workflow Automation</p>
+  <p class="skills-line" style="margin-bottom:0;"><b>Programming:</b> Python, SQL, Java, JavaScript, Basic React.js</p>
+
+  <h2>Key Projects</h2>
+
+  <div class="proj-block">
+    <div class="row"><span class="role">E-Commerce Sales Analytics <span class="org">— Business Intelligence</span></span><span class="date">2025</span></div>
+    <ul>
+      <li>Designed a multi-tab analytics dashboard (overview, customers, products, platforms, profitability) analyzing 6,000 customers, 320 products, and 34,185 orders across sales platforms.</li>
+      <li>Built revenue, margin, LTV/CAC, and return-rate visualizations that revealed marketplace commissions changed profitability rankings even when a platform led on raw revenue.</li>
+    </ul>
+    <p class="tools">Tools: SQL, Python, Power BI, Data Visualization</p>
+  </div>
+
+  <div class="proj-block">
+    <div class="row"><span class="role">Real-Time Sales Analytics (PULSE) <span class="org">— Data Engineering</span></span><span class="date">2025</span></div>
+    <ul>
+      <li>Designed a Kafka-based streaming pipeline where POS and web events flow through a Python consumer for validation and enrichment, landing in PostgreSQL and surfacing in a Power BI-style DirectQuery dashboard.</li>
+      <li>Delivered a live-updating dashboard tracking revenue, orders, average order value, and conversion rate with sub-15-second refresh on streaming transaction data.</li>
+    </ul>
+    <p class="tools">Tools: Apache Kafka, Python, SQL, Docker, Power BI</p>
+  </div>
+
+  <div class="proj-block">
+    <div class="row"><span class="role">Financial Performance Dashboard (Ledger) <span class="org">— Business Intelligence</span></span><span class="date">2025</span></div>
+    <ul>
+      <li>Built a SQL-based fact and dimension data model feeding DAX measures (Net Margin %, YoY Growth) to eliminate manual spreadsheet reconciliation for finance teams.</li>
+      <li>Delivered a live financial dashboard covering revenue vs. expenses vs. profit trends and period-by-period ledger detail, with support for connecting CSV, Excel, or live API data.</li>
+    </ul>
+    <p class="tools">Tools: Power BI, SQL, DAX, JavaScript, Chart.js</p>
+  </div>
+
+  <div class="proj-block">
+    <div class="row"><span class="role">Sales Dashboard in Power BI <span class="org">— Business Intelligence</span></span><span class="date">2024</span></div>
+    <ul>
+      <li>Designed and deployed a live Power BI dashboard tracking 8 sales KPIs - revenue, profit, orders, region, category, growth, returns, and target achievement - for fast business review.</li>
+    </ul>
+    <p class="tools">Tools: Power BI, React, KPI Design, Dashboarding</p>
+  </div>
+
+  <div class="proj-block">
+    <div class="row"><span class="role">HR CV Shortlister <span class="org">— AI / HR Tech</span></span><span class="date">2024</span></div>
+    <ul>
+      <li>Built a Python automation tool to structure candidate evaluation and compare role fit, reducing manual resume screening time by up to 40% by prioritizing role-fit signals ahead of manual review.</li>
+    </ul>
+    <p class="tools">Tools: Python, Automation, Resume Screening, HR Analytics</p>
+  </div>
+
+  <h2>Education</h2>
+  <div class="edu-row">
+    <div class="edu-left"><b>Master of Computer Applications (MCA) - Data Science</b><div>Babu Banarasi Das University, Lucknow</div></div>
+    <div class="date">2023 - 2025</div>
+  </div>
+  <div class="edu-row">
+    <div class="edu-left"><b>Bachelor of Computer Applications (BCA) - Computer Science</b><div>Veer Bahadur Singh Purvanchal University</div></div>
+    <div class="date">2020 - 2023</div>
+  </div>
+
+  <h2>Certifications</h2>
+  <p class="certs">Data Analytics Essentials (Cisco) | IBM Cognos Analytics V11.1.x (IBM) | AI, ML &amp; Python for Data Science (IBM) | Business Intelligence &amp; NoSQL Essentials (IBM) | Power BI for Beginners (Udemy) | Introduction to Cybersecurity (Cisco)</p>
+</body>
+</html>
