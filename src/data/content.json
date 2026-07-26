@@ -144,7 +144,7 @@
     {
       "title": "Sales Dashboard in Power BI",
       "tag": "Business Intelligence",
-      "year": "Power BI",
+      "year": "",
       "problem": "Sales leaders needed a deployed dashboard experience to monitor revenue, profit, orders, regional performance, and KPI movement quickly.",
       "role": "Designed the dashboard story, organized KPI sections, built the deployed analytics interface, and shaped the recruiter-facing live view.",
       "approach": "Created a live sales dashboard with KPI cards, performance visuals, regional insights, and a clean layout for fast business review.",
@@ -163,7 +163,7 @@
     {
       "title": "HR CV Shortlister",
       "tag": "AI / HR Tech",
-      "year": "Python",
+      "year": "",
       "problem": "Recruiters need a faster deployed tool to review resumes, compare candidate profiles, and shortlist relevant applicants.",
       "role": "Built the shortlisting flow, structured candidate evaluation, and deployed the project for HR screening use cases.",
       "approach": "Used automation-focused logic to collect candidate inputs, compare role fit, and support faster screening decisions.",
@@ -181,7 +181,7 @@
     {
       "title": "Real-Time Sales Analytics (PULSE)",
       "tag": "Data Engineering",
-      "year": "2025",
+      "year": "",
       "problem": "Sales teams needed a live, streaming view of transactions instead of stale end-of-day reports to react to demand shifts as they happen.",
       "role": "Designed the streaming pipeline architecture and built the deployed real-time dashboard interface.",
       "approach": "Built a Kafka-based ingestion pipeline where POS and web events flow through a Python consumer for validation and enrichment, land in Postgres, and surface live in a Power BI-style DirectQuery dashboard.",
@@ -201,7 +201,7 @@
     {
       "title": "Financial Performance Dashboard (Ledger)",
       "tag": "Business Intelligence",
-      "year": "2025",
+      "year": "",
       "problem": "Finance teams needed a consolidated view of revenue, cost, and margin trends without manually reconciling spreadsheets each period.",
       "role": "Built the dashboard's data model, KPI logic, and the deployed analytics interface, including a data upload flow for custom datasets.",
       "approach": "Structured a SQL-based fact and dimension model feeding DAX measures for Net Margin % and YoY Growth, with support for connecting a CSV, Excel, Power BI export, or live API to recompute the dashboard.",
@@ -221,7 +221,7 @@
     {
       "title": "Churn Radar Dashboard",
       "tag": "Customer Analytics",
-      "year": "2025",
+      "year": "",
       "problem": "Businesses struggle to spot at-risk customers early, leading to lost revenue from preventable churn.",
       "role": "Designed the churn analysis workflow, built the deployed dashboard interface, and structured the risk-scoring visuals.",
       "approach": "Built a live churn analytics dashboard that segments customers by risk level, surfaces key churn drivers, and visualizes retention trends for fast decision-making.",
@@ -240,7 +240,7 @@
     {
       "title": "E-Commerce Sales Analytics",
       "tag": "Business Intelligence",
-      "year": "2025",
+      "year": "",
       "problem": "E-commerce leadership needed a single view across platforms, categories, and customer segments to spot where revenue growth wasn't reaching profit.",
       "role": "Designed the multi-tab analytics structure and built the deployed dashboard covering overview, customers, products, platforms, and profitability.",
       "approach": "Analyzed a synthetic dataset of 6,000 customers, 320 products, and 34,185 orders across platforms to build revenue, margin, LTV/CAC, delivery, and return-rate visuals.",
@@ -259,7 +259,7 @@
     {
       "title": "Corex Enterprises",
       "tag": "Business Website",
-      "year": "React",
+      "year": "",
       "problem": "Corex Enterprises needed a deployed business website with a modern first impression, service clarity, and responsive presentation.",
       "role": "Created the frontend structure, organized business content, improved page sections, and prepared the site for Netlify deployment.",
       "approach": "Built a clean React-based website flow with reusable sections, professional visual hierarchy, and mobile-friendly styling.",
@@ -277,7 +277,7 @@
     {
       "title": "Self-Learning AI for Games",
       "tag": "Machine Learning",
-      "year": "NEAT",
+      "year": "",
       "problem": "Demonstrate reinforcement-style learning by training an AI agent to play Flappy Bird without hard-coded gameplay rules.",
       "role": "Built the Python simulation, integrated NEAT training, and visualized agent performance across generations.",
       "approach": "Integrated NEAT-Python with Pygame and visualized training behavior using Python analysis libraries.",
@@ -294,7 +294,7 @@
     {
       "title": "Geovixa - Geo-Attendance HRMS",
       "tag": "HRMS / Workforce Management",
-      "year": "2025",
+      "year": "",
       "problem": "Organizations with field and office staff needed a reliable way to track attendance by location, manage multiple staff roles, and generate reports without manual, paper-based processes.",
       "role": "Designed the role-based access architecture, built the geo-attendance punch in/out system, and deployed the full-stack HRMS platform.",
       "approach": "Built a multi-role HRMS with 5 distinct access levels (Employee, Manager, Admin, Coordinator, Reports/Area Officer), employee ID-based login, geo-tagged punch in/out for attendance capture, and role-scoped dashboards for viewing and downloading attendance records.",
@@ -314,7 +314,7 @@
     {
       "title": "MedGrid - Hospital Operations Portal",
       "tag": "SaaS / Healthcare Tech",
-      "year": "2025",
+      "year": "",
       "problem": "Hospitals need a secure, access-controlled portal to onboard staff and manage operations, but without a proper approval workflow, anyone could self-assign sensitive roles like doctor or admin.",
       "role": "Designed the authentication and role-approval system, built the operations portal, and deployed the live SaaS product.",
       "approach": "Built a secure sign-in portal where the first registered user automatically becomes admin, and every account after that must be reviewed and approved by an admin from a dedicated Users management page before gaining role-based access.",
@@ -334,7 +334,7 @@
     {
       "title": "Vistaar - Instant Dashboard Generator",
       "tag": "Business Intelligence / Automation",
-      "year": "2025",
+      "year": "",
       "problem": "Building a dashboard in Power BI or Excel normally means manual setup, formulas, and chart selection every time new data arrives, which slows down quick business reviews.",
       "role": "Designed the auto-detection logic for chart and KPI generation, and built and deployed the zero-setup dashboard tool.",
       "approach": "Built a tool where a user drops in a raw Excel or CSV file and the app automatically reads the columns, infers the right chart types, calculates relevant KPIs, and assembles a complete interactive dashboard with no manual formulas or setup.",
@@ -353,7 +353,7 @@
     {
       "title": "Ledger AI - Business Intelligence Dashboard",
       "tag": "AI / Business Intelligence",
-      "year": "2025",
+      "year": "",
       "problem": "Business teams needed a way to upload raw data and instantly get KPIs, forecasts, and plain-language insights without writing SQL or building charts manually.",
       "role": "Designed the auto-KPI detection engine, built the multi-module dashboard, and deployed the full application.",
       "approach": "Built a data upload pipeline that auto-detects date, revenue, and customer columns to generate live KPIs (total value, average per row, record count, unique segments, period-over-period growth) and trend charts, paired with Revenue Forecast, Customer Analytics, and SQL Generator modules plus an AI Chat with Data feature and a local Python (numpy/pandas) insight generator that explains trends in plain language, including Hinglish.",
@@ -373,7 +373,7 @@
     {
       "title": "Business Report Generator",
       "tag": "Data Analytics",
-      "year": "2025",
+      "year": "",
       "problem": "Businesses need a structured way to generate and organize performance reports from raw data.",
       "role": "Built the report generation logic and structured the data-to-report workflow.",
       "approach": "Developed a tool that processes business data and organizes it into a structured, readable report format.",
@@ -389,7 +389,7 @@
     {
       "title": "Quantum Error Correction Simulation",
       "tag": "Advanced Analytics",
-      "year": "2024",
+      "year": "",
       "problem": "Noisy Intermediate-Scale Quantum systems require benchmarking of fidelity, error rates, and mitigation strategies.",
       "role": "Implemented simulation workflows and compared QEC behavior across fidelity and error-rate benchmarks.",
       "approach": "Simulated QEC protocols with IBM Qiskit and Google Cirq, comparing resource-efficient designs for chemistry and optimization use cases.",
